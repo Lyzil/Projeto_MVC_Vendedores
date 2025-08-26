@@ -1,0 +1,14 @@
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\bin\Debug\net8.0\Proj. MVC Vendedores.exe
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\bin\Debug\net8.0\Proj. MVC Vendedores.deps.json
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\bin\Debug\net8.0\Proj. MVC Vendedores.runtimeconfig.json
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\bin\Debug\net8.0\Proj. MVC Vendedores.dll
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\bin\Debug\net8.0\Proj. MVC Vendedores.pdb
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\obj\Debug\net8.0\Proj. MVC Vendedores.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\obj\Debug\net8.0\Proj. MVC Vendedores.AssemblyInfoInputs.cache
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\obj\Debug\net8.0\Proj. MVC Vendedores.AssemblyInfo.cs
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\obj\Debug\net8.0\Proj. MVC Vendedores.csproj.CoreCompileInputs.cache
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\obj\Debug\net8.0\Proj. MVC Vendedores.dll
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\obj\Debug\net8.0\refint\Proj. MVC Vendedores.dll
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\obj\Debug\net8.0\Proj. MVC Vendedores.pdb
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\obj\Debug\net8.0\Proj. MVC Vendedores.genruntimeconfig.cache
+C:\Users\jaque\OneDrive\Área de Trabalho\Proj. MVC Vendedores\Proj. MVC Vendedores\obj\Debug\net8.0\ref\Proj. MVC Vendedores.dll
