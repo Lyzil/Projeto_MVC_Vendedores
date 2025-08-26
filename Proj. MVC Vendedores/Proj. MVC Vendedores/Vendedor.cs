@@ -57,15 +57,21 @@ namespace Proj._MVC_Vendedores
         }
         public double valorVendas()
         {
-            /*for (int i = 0; i < 31; i++) 
+            double resTotal = 0.0;
+            for (int i = 0; i < 31; i++) 
             {
-                
-            }*/
-            return 424;
+              resTotal += AsVendas[i].value;
+            }
+            return resTotal;
         }
         public double valorComissao()
         {
-            return percComissao;
+            double resComi = 0.0;
+            for (int i = 0; i < 31; i++) 
+            {
+              resComi += AsVendas[i].valorMedio();
+            }
+            return resComi;
         }
 
         public override bool Equals(object obj)
@@ -74,3 +80,4 @@ namespace Proj._MVC_Vendedores
         }
     }
 }
+
