@@ -1,0 +1,140 @@
+﻿// See https://aka.ms/new-console-template for more information
+using System;
+using System.Security.Cryptography;
+using Proj._MVC_Vendedores;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+int opcao;
+Vendedores meusVendedores = new Vendedores();
+
+do
+{
+    Console.WriteLine("Menu de opções " +
+        "\n0. Sair " +
+        "\n1. Cadastrar vendedor " +
+        "\n2. Consultar vendedor " +
+        "\n3. Excluir vendedor  " +
+        "\n4. Registrar venda " +
+        "\n5. Listar vendedores " + 
+        "\nEscolhe a opção que deseja: ");
+
+    string inputOpcao = Console.ReadLine();
+    if (!int.TryParse(inputOpcao, out opcao))
+    {
+        Console.WriteLine("Ocorreu um erro, verifique se digitou corretamente.\n");
+        continue;
+    }
+    switch (opcao)
+    {
+        case 0:
+            break;
+        case 1:
+            Console.WriteLine("\ndigite o ID: ");
+            if (!int.TryParse(Console.ReadLine(), out int addID))
+            {
+                Console.WriteLine("ID inválido!\n");
+                break;
+            }
+            Console.WriteLine("digite o Nome: "); 
+            string addNome = Console.ReadLine();
+
+            Console.WriteLine("digite o percentual(%) da comissão do vendedor: ");
+            if (!double.TryParse(Console.ReadLine(), out double addPerc))
+            {
+                Console.WriteLine("Percentual inválido!\n");
+                break;
+            }
+            Console.WriteLine(meusVendedores.addVendedor(new Vendedor(addID, addNome, addPerc)) ? "adicionado com sucesso!\n" : "Não foi possivel adicionar\n");
+            break;
+        case 2:
+            Console.WriteLine("\ndigite o ID a ser consultado");
+            if (!int.TryParse(Console.ReadLine(), out int idConsulta))
+            {
+                Console.WriteLine("ID inválido!\n");
+                break;
+            }
+            Vendedor vendedorConsultado = meusVendedores.searchVendedor(new Vendedor(idConsulta));
+            if (vendedorConsultado.Id != -1)
+            {
+                Console.WriteLine($"ID: {vendedorConsultado.Id}\n" +
+                               $"Nome: {vendedorConsultado.Nome}\n" +
+                               $"Venda: {vendedorConsultado.valorVendas()}\n" +
+                               $"Comissão: {vendedorConsultado.valorComissao()}\n");
+                Console.WriteLine("Valores Médios das vendas diárias:");
+                for (int i = 0; i < 31; i++)
+                {
+                    if (vendedorConsultado.AsVendas[i].Qtde > 0)
+                    {
+                        Console.WriteLine($"Dia {i + 1}: {vendedorConsultado.AsVendas[i].ValorMedio()}\n");
+                    }
+                }
+            }
+            else { Console.WriteLine("Vendedor não encontrado!\n"); }
+            break;
+        case 3:
+            Console.WriteLine("\ndigite o ID: ");
+            if (!int.TryParse(Console.ReadLine(), out int delID))
+            {
+                Console.WriteLine("ID inválido!\n");
+                break;
+            }
+            Console.WriteLine(meusVendedores.delVendedor(new Vendedor(delID)) ? "Deletado com sucesso!\n" : "Não foi possível deletar (vendedor possui vendas ou não existe)\n");            
+            break;
+        case 4:
+            Console.WriteLine("\nDigite o Id do funcionario: ");
+            if (!int.TryParse(Console.ReadLine(), out int IdRegistrar))
+            {
+                Console.WriteLine("ID inválido!\n");
+                break;
+            }
+            Vendedor vendedorAchado = meusVendedores.searchVendedor(new Vendedor(IdRegistrar));
+            if (vendedorAchado.Id != -1)
+            {
+                Console.WriteLine("Digite o dia do mes (Numero): ");
+                if (!int.TryParse(Console.ReadLine(), out int dia))
+                {
+                    Console.WriteLine("Dia inválido!\n");
+                    break;
+                }
+                Console.WriteLine("Digite a quantidade: ");
+                if (!int.TryParse(Console.ReadLine(), out int qtde) || qtde <= 0)
+                {
+                    Console.WriteLine("Quantidade inválida!\n");
+                    break;
+                }
+                Console.WriteLine("Digite o valor total: ");
+                if (!double.TryParse(Console.ReadLine(), out double vlTotal) || vlTotal <= 0)
+                {
+                    Console.WriteLine("Valor inválido!\n");
+                    break;
+                }
+                vendedorAchado.registrarVenda(dia - 1, new Venda(qtde, vlTotal));
+                Console.WriteLine("Venda registrada com sucesso!\n");
+            }
+            else
+            {
+                Console.WriteLine("Vendedor não encontrado!\n");
+            }
+            break;
+        case 5:
+            double somaTotalVendas = 0;
+            foreach(Vendedor v in meusVendedores.OsVendedores) 
+            {
+                Vendedor vendedorListado = meusVendedores.searchVendedor(new Vendedor(v.Id));
+                if(vendedorListado.Id != -1)
+                {
+                    Console.WriteLine($"ID: {vendedorListado.Id}\n" +
+                                   $"Nome: {vendedorListado.Nome}\n" +
+                                   $"Venda: {vendedorListado.valorVendas()}\n" +
+                                   $"Comissão: {vendedorListado.valorComissao()}\n");
+                    somaTotalVendas += vendedorListado.valorVendas();
+                }
+                else { Console.WriteLine("---Vaga de Vendedor vazia---\n"); }
+            }
+            Console.WriteLine($"Valor total da venda de todos os vendedores : {somaTotalVendas}\n");
+            break;
+        default:
+            Console.WriteLine("\nOcorreu um erro, verifique se digitou corretamente.\n");
+            break;
+    }
+} while (opcao != 0);
