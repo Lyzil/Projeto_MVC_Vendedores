@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Proj._MVC_Vendedores
 {
-    internal class Vendedores : Vendedor
+    internal class Vendedores
     {
         private int max;
         private int qtde;
@@ -31,6 +31,12 @@ namespace Proj._MVC_Vendedores
 
         public bool addVendedor(Vendedor v)
         {
+            foreach (Vendedor vend in this.OsVendedores)
+            {
+                if (vend.Id != -1 && vend.Id == v.Id)
+                    return false;
+            }
+
             bool podeAdicionar = (this.qtde < this.max);
             if (podeAdicionar)
                 this.osVendedores[this.qtde++] = v;
@@ -79,13 +85,23 @@ namespace Proj._MVC_Vendedores
         }
         public double valorVendas()
         {
-            Vendedor v = new Vendedor();
-            return v.valorVendas();
+            double total = 0;
+            foreach (Vendedor v in this.osVendedores)
+            {
+                if (v.Id != -1)
+                    total += v.valorVendas();
+            }
+            return total;
         }
         public double valorComissao()
         {
-            Vendedor v = new Vendedor();
-            return v.valorComissao();
+            double total = 0;
+            foreach (Vendedor v in this.osVendedores)
+            {
+                if (v.Id != -1)
+                    total += v.valorComissao();
+            }
+            return total;
         }
     }
 }

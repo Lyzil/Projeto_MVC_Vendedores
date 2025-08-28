@@ -25,8 +25,7 @@ namespace Proj._MVC_Vendedores
 
         public double ValorMedio()
         {
-            return (valor / qtde);
+            return qtde > 0 ? valor / qtde : 0;
         }
-
     }
 }

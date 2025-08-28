@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jaque\\OneDrive\\Área de Trabalho\\Proj_MVC_Vendedores\\Proj. MVC Vendedores\\Proj. MVC Vendedores.csproj": {}
+    "C:\\Users\\jaque\\OneDrive\\Área de Trabalho\\Proj. MVC Vendedores\\Proj. MVC Vendedores\\Proj. MVC Vendedores.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jaque\\OneDrive\\Área de Trabalho\\Proj_MVC_Vendedores\\Proj. MVC Vendedores\\Proj. MVC Vendedores.csproj": {
+    "C:\\Users\\jaque\\OneDrive\\Área de Trabalho\\Proj. MVC Vendedores\\Proj. MVC Vendedores\\Proj. MVC Vendedores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jaque\\OneDrive\\Área de Trabalho\\Proj_MVC_Vendedores\\Proj. MVC Vendedores\\Proj. MVC Vendedores.csproj",
+        "projectUniqueName": "C:\\Users\\jaque\\OneDrive\\Área de Trabalho\\Proj. MVC Vendedores\\Proj. MVC Vendedores\\Proj. MVC Vendedores.csproj",
         "projectName": "Proj. MVC Vendedores",
-        "projectPath": "C:\\Users\\jaque\\OneDrive\\Área de Trabalho\\Proj_MVC_Vendedores\\Proj. MVC Vendedores\\Proj. MVC Vendedores.csproj",
+        "projectPath": "C:\\Users\\jaque\\OneDrive\\Área de Trabalho\\Proj. MVC Vendedores\\Proj. MVC Vendedores\\Proj. MVC Vendedores.csproj",
         "packagesPath": "C:\\Users\\jaque\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jaque\\OneDrive\\Área de Trabalho\\Proj_MVC_Vendedores\\Proj. MVC Vendedores\\obj\\",
+        "outputPath": "C:\\Users\\jaque\\OneDrive\\Área de Trabalho\\Proj. MVC Vendedores\\Proj. MVC Vendedores\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

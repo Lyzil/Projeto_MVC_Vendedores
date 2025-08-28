@@ -58,14 +58,14 @@ do
             {
                 Console.WriteLine($"ID: {vendedorConsultado.Id}\n" +
                                $"Nome: {vendedorConsultado.Nome}\n" +
-                               $"Venda: {vendedorConsultado.valorVendas()}\n" +
-                               $"Comissão: {vendedorConsultado.valorComissao()}\n");
+                               $"Venda: R${vendedorConsultado.valorVendas():F2}\n" +
+                               $"Comissão: R${vendedorConsultado.valorComissao():F2}\n");
                 Console.WriteLine("Valores Médios das vendas diárias:");
                 for (int i = 0; i < 31; i++)
                 {
                     if (vendedorConsultado.AsVendas[i].Qtde > 0)
                     {
-                        Console.WriteLine($"Dia {i + 1}: {vendedorConsultado.AsVendas[i].ValorMedio()}\n");
+                        Console.WriteLine($"Dia {i + 1}: R${vendedorConsultado.AsVendas[i].ValorMedio():F2}\n");
                     }
                 }
             }
@@ -117,21 +117,19 @@ do
             }
             break;
         case 5:
-            double somaTotalVendas = 0;
-            foreach(Vendedor v in meusVendedores.OsVendedores) 
+            foreach (Vendedor v in meusVendedores.OsVendedores)
             {
-                Vendedor vendedorListado = meusVendedores.searchVendedor(new Vendedor(v.Id));
-                if(vendedorListado.Id != -1)
-                {
-                    Console.WriteLine($"ID: {vendedorListado.Id}\n" +
-                                   $"Nome: {vendedorListado.Nome}\n" +
-                                   $"Venda: {vendedorListado.valorVendas()}\n" +
-                                   $"Comissão: {vendedorListado.valorComissao()}\n");
-                    somaTotalVendas += vendedorListado.valorVendas();
-                }
-                else { Console.WriteLine("---Vaga de Vendedor vazia---\n"); }
+                if (v.Id == -1) continue;
+
+                Console.WriteLine($"ID: {v.Id}\n" +
+                               $"Nome: {v.Nome}\n" +
+                               $"Venda: R${v.valorVendas():F2}\n" +
+                               $"Comissão: R${v.valorComissao():F2}\n");
             }
-            Console.WriteLine($"Valor total da venda de todos os vendedores : {somaTotalVendas}\n");
+
+            Console.WriteLine($"Valor total da venda de todos os vendedores: R${meusVendedores.valorVendas():F2}");
+            Console.WriteLine($"Valor total da comissão de todos os vendedores: R${meusVendedores.valorComissao():F2}\n");
+
             break;
         default:
             Console.WriteLine("\nOcorreu um erro, verifique se digitou corretamente.\n");
