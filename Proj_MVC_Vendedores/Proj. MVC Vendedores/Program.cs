@@ -91,7 +91,7 @@ do
             if (vendedorAchado.Id != -1)
             {
                 Console.WriteLine("Digite o dia do mes (Numero): ");
-                if (!int.TryParse(Console.ReadLine(), out int dia))
+                if (!int.TryParse(Console.ReadLine(), out int dia) || dia < 1 || dia > 31)
                 {
                     Console.WriteLine("Dia inválido!\n");
                     break;
@@ -108,7 +108,7 @@ do
                     Console.WriteLine("Valor inválido!\n");
                     break;
                 }
-                vendedorAchado.registrarVenda(dia - 1, new Venda(qtde, vlTotal));
+                vendedorAchado.registrarVenda(dia, new Venda(qtde, vlTotal));
                 Console.WriteLine("Venda registrada com sucesso!\n");
             }
             else

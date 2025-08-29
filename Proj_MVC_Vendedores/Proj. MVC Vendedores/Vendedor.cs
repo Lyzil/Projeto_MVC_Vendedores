@@ -51,9 +51,12 @@ namespace Proj._MVC_Vendedores
 
         public void registrarVenda(int dia, Venda venda)
         {
-            bool podeRegistrar = (dia < 31 && dia >= 0);
+            bool podeRegistrar = (dia >= 1 && dia <= 31);
             if (podeRegistrar)
-                this.asVendas[dia] = venda;
+            {
+                this.asVendas[dia - 1].Qtde += venda.Qtde;
+                this.asVendas[dia - 1].Valor += venda.Valor;
+            }
         }
         public double valorVendas()
         {
